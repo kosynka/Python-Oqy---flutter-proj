@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_python/cubit/app_cubits.dart';
+import 'package:learn_python/home_page.dart';
+import 'package:learn_python/nav_pages/main_page.dart';
 import 'package:learn_python/widgets/app_text.dart';
 import 'package:learn_python/widgets/responsive_button.dart';
 import 'package:learn_python/widgets/app_large_text.dart';
@@ -89,7 +90,12 @@ class _WelcomePageState extends State<WelcomePage> {
                         SizedBox(height: 40),
                         GestureDetector(
                           onTap: () {
-                            BlocProvider.of<AppCubits>(context).getData();
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => MainPage(),
+                              ),
+                            );
                           },
                           child: Container(
                             width: 150,
