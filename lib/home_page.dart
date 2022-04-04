@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_python/widgets/app_large_text.dart';
 import 'package:learn_python/widgets/app_text.dart';
 
-import 'detail_page.dart';
+import '1lesson_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DetailPage(),
+                        builder: (context) => FirstLessonPage(),
                       ),
                     );
                   },
