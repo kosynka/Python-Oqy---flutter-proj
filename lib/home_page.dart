@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_python/widgets/app_large_text.dart';
 import 'package:learn_python/widgets/app_text.dart';
 import '1lesson_page.dart';
