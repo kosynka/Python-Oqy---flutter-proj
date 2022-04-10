@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:learn_python/nav_pages/user_preferences.dart';
 import 'package:learn_python/widgets/app_large_text.dart';
 import 'package:learn_python/widgets/app_text.dart';
-import 'detail_page.dart';
 import 'nav_pages/user_preferences.dart';
+import '1lesson_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => DetailPage(),
+                        builder: (context) => FirstLessonPage(),
                       ),
                     );
                   },

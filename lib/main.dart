@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:learn_python/detail_page.dart';
-import 'package:learn_python/nav_pages/main_page.dart';
 import 'package:learn_python/welcome_page.dart';
 
 void main() {

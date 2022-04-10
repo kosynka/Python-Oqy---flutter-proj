@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:learn_python/nav_pages/profile_widget.dart';
 import 'package:learn_python/nav_pages/user.dart';
 import 'package:learn_python/nav_pages/user_preferences.dart';
-
 import '../widgets/responsive_button.dart';
 
 class UserPage extends StatefulWidget {
