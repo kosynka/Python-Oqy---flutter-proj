@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_python/nav_pages/user_preferences.dart';
 import '../widgets/app_large_text.dart';
 import './quiz.dart';
 import './result.dart';
@@ -92,6 +93,7 @@ class _QuizPageState extends State<QuizPage> {
     }
   }
 
+  final user = UserPreferences.myUser;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -109,7 +111,8 @@ class _QuizPageState extends State<QuizPage> {
                   width: 45,
                   height: 45,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      image: DecorationImage(image: AssetImage(user.imagePath)),
+                      borderRadius: BorderRadius.circular(20),
                       color: Colors.grey.withOpacity(0.5)),
                 ),
               ],

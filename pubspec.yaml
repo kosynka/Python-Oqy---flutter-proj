@@ -23,6 +23,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+    - img/
     - img/test.jpg
     - img/welcome-one.jpg
     - img/welcome-two.jpg
@@ -39,3 +40,4 @@ flutter:
     - img/wel1.png
     - img/wel2.png
     - img/wel3.png
+    - img/default-avatar-profile-image.jpg

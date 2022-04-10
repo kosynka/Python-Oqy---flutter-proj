@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:learn_python/nav_pages/user_preferences.dart';
 import 'package:learn_python/widgets/app_large_text.dart';
 import 'package:learn_python/widgets/app_text.dart';
 import 'detail_page.dart';
+import 'nav_pages/user_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +20,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     '3dmodelling.jpg': '3D модельдеу',
   };
 
+  final user = UserPreferences.myUser;
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
@@ -35,7 +37,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               width: 45,
               height: 45,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(image: AssetImage(user.imagePath)),
+                  borderRadius: BorderRadius.circular(20),
                   color: Colors.grey.withOpacity(0.5)),
             ),
           ],
