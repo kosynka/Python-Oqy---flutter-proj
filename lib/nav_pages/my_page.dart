@@ -1,4 +1,6 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_python/nav_pages/edit_profile_page.dart';
 import 'package:learn_python/nav_pages/profile_widget.dart';
 import 'package:learn_python/nav_pages/user.dart';
 import 'package:learn_python/nav_pages/user_preferences.dart';
@@ -15,69 +17,69 @@ class _UserPageState extends State<UserPage> {
   final user = UserPreferences.myUser;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: const EdgeInsets.only(top: 50, left: 15),
-            child: Row(
-              children: [
-                const Icon(Icons.menu, size: 30, color: Colors.black54),
-                Expanded(child: Container()),
-                Container(
-                  padding: const EdgeInsets.only(top: 5),
-                  margin: const EdgeInsets.only(right: 20),
-                  child: const Icon(
-                    Icons.dark_mode_outlined,
-                    size: 40,
-                    color: Colors.black,
-                  ),
-                ),
-              ],
+    return ThemeSwitchingArea(
+      child: Scaffold(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(top: 40, left: 15),
+              child: Row(
+                children: [
+                  const Icon(Icons.menu, size: 30, color: Colors.black54),
+                  Expanded(child: Container()),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 30),
-          ProfileWidget(
-            imagePath: user.imagePath,
-            onClicked: () async {},
-          ),
-          const SizedBox(height: 24),
-          buildName(user),
-          const SizedBox(height: 24),
-          Center(
-            child: Container(
-              child: GestureDetector(
-                onTap: () {},
-                child: Container(
-                  child: ResponsiveButton(
-                    width: 160,
-                    text: 'PRO Болу',
-                    color: Colors.blue,
-                    hasIcon: false,
-                    borderRadius: 30,
-                    textSize: 22,
+            const SizedBox(height: 30),
+            ProfileWidget(
+              imagePath: user.imagePath,
+              onClicked: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EditProfilePage(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(height: 24),
+            buildName(user),
+            const SizedBox(height: 24),
+            Center(
+              child: Container(
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    child: ResponsiveButton(
+                      width: 160,
+                      text: 'PRO Болу',
+                      color: Colors.blue,
+                      hasIcon: false,
+                      borderRadius: 30,
+                      textSize: 22,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 24),
-          IntrinsicHeight(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                buildButton(context, '60%', 'оқыды'),
-                buildDivider(),
-                buildButton(context, '4.8', 'баға'),
-                buildDivider(),
-                buildButton(context, '40%', 'қалды'),
-              ],
+            const SizedBox(height: 24),
+            IntrinsicHeight(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  buildButton(context, '60%', 'оқыды'),
+                  buildDivider(),
+                  buildButton(context, '4.8', 'баға'),
+                  buildDivider(),
+                  buildButton(context, '40%', 'қалды'),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 24),
-          buildAbout(),
-        ],
+            const SizedBox(height: 24),
+            buildAbout(),
+          ],
+        ),
       ),
     );
   }

@@ -1,3 +1,4 @@
+import 'package:animated_theme_switcher/animated_theme_switcher.dart';
 import 'package:flutter/material.dart';
 import 'package:learn_python/nav_pages/user_preferences.dart';
 import '../widgets/app_large_text.dart';
@@ -96,44 +97,47 @@ class _QuizPageState extends State<QuizPage> {
   final user = UserPreferences.myUser;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: const EdgeInsets.only(top: 50, left: 15),
-            child: Row(
-              children: [
-                Icon(Icons.menu, size: 30, color: Colors.black54),
-                Expanded(child: Container()),
-                Container(
-                  margin: const EdgeInsets.only(right: 20),
-                  width: 45,
-                  height: 45,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage(user.imagePath)),
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.grey.withOpacity(0.5)),
-                ),
-              ],
+    return ThemeSwitchingArea(
+      child: Scaffold(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(top: 42.5, left: 15),
+              child: Row(
+                children: [
+                  Icon(Icons.menu, size: 30, color: Colors.black54),
+                  Expanded(child: Container()),
+                  Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    width: 30,
+                    height: 30,
+                    decoration: BoxDecoration(
+                        image:
+                            DecorationImage(image: AssetImage(user.imagePath)),
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey.withOpacity(0.5)),
+                  ),
+                ],
+              ),
             ),
-          ), //menu button
-          SizedBox(height: 30),
-          Container(
-            margin: const EdgeInsets.only(left: 20),
-            child: AppLargeText(text: 'Python Oqy'),
-          ), //python oqy
-          Padding(
-            padding: const EdgeInsets.all(30.0),
-            child: _questionIndex < _questions.length
-                ? Quiz(
-                    answerQuestion: _answerQuestion,
-                    questionIndex: _questionIndex,
-                    questions: _questions,
-                  )
-                : Result(_totalScore, _resetQuiz),
-          ),
-        ],
+            SizedBox(height: 30),
+            Container(
+              margin: const EdgeInsets.only(left: 20),
+              child: AppLargeText(text: 'Python Oqy'),
+            ), //python oqy
+            Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: _questionIndex < _questions.length
+                  ? Quiz(
+                      answerQuestion: _answerQuestion,
+                      questionIndex: _questionIndex,
+                      questions: _questions,
+                    )
+                  : Result(_totalScore, _resetQuiz),
+            ),
+          ],
+        ),
       ),
     );
   }
