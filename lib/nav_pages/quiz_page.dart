@@ -125,7 +125,7 @@ class _QuizPageState extends State<QuizPage> {
             Container(
               margin: const EdgeInsets.only(left: 20),
               child: AppLargeText(text: 'Python Oqy'),
-            ), //python oqy
+            ),
             Padding(
               padding: const EdgeInsets.all(30.0),
               child: _questionIndex < _questions.length
